@@ -1,6 +1,24 @@
 //calll modal addEventListener
 const addModal = document.querySelector('.add-modal');
 const btnadd = document.querySelector('.btn-add');
+const tableusers = document.querySelector('.table-users');
+const addModalform = document.querySelector('.add-modal .form');
+//create element and render users
+const renderUser = doc =>{
+  const tr =`
+  <tr>
+    <td>${doc.data().FirstName}</td>
+    <td>${doc.data().LastName}</td>
+    <td>${doc.data().phone}</td>
+    <td>${doc.data().Email}</td>
+  <td>
+  <button class="btn btn-edit">edit</button>
+  <button class="btn btn-delite">delite</button>
+  </td>
+</tr>
+  `;
+  tableusers.insertAdjacentHTML('beforeend', tr);
+}
 //click add user button
 btnadd.addEventListener('click', ()=>{
   addModal.classList.add('modal-show');
@@ -16,6 +34,11 @@ window.addEventListener('click',e=>{
 //get all users
 db.collection('users').get().then(querySnapshot =>{
   querySnapshot.forEach(doc => {
-    console.log(doc.data());
+    renderUser(doc);
   })
+});
+//click Submitin add Modal
+addModalform.addEventListener('submit', e=>{
+e.preventDefault();
+console.log(addModalform.firstname.value);
 })

@@ -19,16 +19,7 @@
           <th>Email</th>
           <th>Actions</th>
         </tr>
-        <tr>
-          <th>mike</th>
-          <th>lue</th>
-          <th>0732456789</th>
-          <th>mail@gmail.com</th>
-        <td>
-        <button class="btn btn-edit">edit</button>
-        <button class="btn btn-delite">delite</button>
-      </td>
-    </tr>
+
       </table>
       <button class="btn btn-add">add users</button>
     </div>
@@ -43,7 +34,7 @@
                 <input type="text" name="lastname" value="" placeholder="last name">
                 <input type="number" name="phone" value="" placeholder="phone">
                 <input type="email" name="email" value="" placeholder="email">
-                <button class="btn btn-modal" type="button" name="button">Submit</button>
+                <button class="btn btn-modal">Submit</button>
               </form>
             </div>
           </div>
@@ -51,13 +42,17 @@
       </div>
   </div>
 
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <!-- The core Firebase JS SDK is always required and must be listed first-->
   <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
 
   <!-- TODO: Add SDKs for Firebase products that you want to use
        https://firebase.google.com/docs/web/setup#available-libraries -->
   <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+
   <script>
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
