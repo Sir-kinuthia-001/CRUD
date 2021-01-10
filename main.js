@@ -11,5 +11,4 @@ window.addEventListener('click',e=>{
     addModal.classList.remove('modal-show');
   }
   //console.log(e.target, addModal);
-
 });
