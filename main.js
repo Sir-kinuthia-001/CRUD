@@ -12,3 +12,10 @@ window.addEventListener('click',e=>{
   }
   //console.log(e.target, addModal);
 });
+
+//get all users
+db.collection('users').get().then(querySnapshot =>{
+  querySnapshot.forEach(doc => {
+    console.log(doc.data());
+  })
+})
