@@ -1,8 +1,10 @@
+const modalwrapper = document.querySelector('.modal-wrapper');
 //calll modal addEventListener
 const addModal = document.querySelector('.add-modal');
 const btnadd = document.querySelector('.btn-add');
 const tableusers = document.querySelector('.table-users');
 const addModalform = document.querySelector('.add-modal .form');
+
 //create element and render users
 const renderUser = doc =>{
   const tr =`
@@ -40,5 +42,11 @@ db.collection('users').get().then(querySnapshot =>{
 //click Submitin add Modal
 addModalform.addEventListener('submit', e=>{
 e.preventDefault();
-console.log(addModalform.firstname.value);
+db.collection('users').add({
+  FirstName: addModalform.firstname.value,
+  LastName: addModalform.lastname.value,
+  phone: addModalform.phone.value,
+  Email: addModalform.email.value,
+});
+  modalwrapper.classList.remove('modal-show');
 })
