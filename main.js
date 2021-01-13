@@ -55,5 +55,5 @@ db.collection('users').add({
   phone: addModalform.phone.value,
   Email: addModalform.email.value,
 });
-  modalwrapper.classList.remove('modal-show');
+  modalwrapper.classList.remove('modal-show');//removes the model
 })
