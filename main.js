@@ -8,7 +8,7 @@ const addModalform = document.querySelector('.add-modal .form');
 //create element and render users
 const renderUser = doc =>{
   const tr =`
-  <tr>
+  <tr data-id='${doc.id}'>
     <td>${doc.data().FirstName}</td>
     <td>${doc.data().LastName}</td>
     <td>${doc.data().phone}</td>
@@ -20,6 +20,13 @@ const renderUser = doc =>{
 </tr>
   `;
   tableusers.insertAdjacentHTML('beforeend', tr);
+
+//click delite user
+const delitebutton = document.querySelector(`[data-id='${doc.id}'] .btn-delite`);
+delitebutton.addEventListener('click', ()=>{
+  console.log(doc.data().FirstName);
+});
+
 }
 //click add user button
 btnadd.addEventListener('click', ()=>{
